@@ -1,9 +1,12 @@
-import { useState } from 'react'
+import React, { useState, createContext } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
 import Todos from './components/Todos'
 import TodoForm from './components/TodoForm'
+
+// Buatlah sebuah context
+export const TodoContext = createContext()
 
 function App() {
   const [todos, setTodos] = useState([
@@ -59,15 +62,14 @@ function App() {
   }
 
   return (
-    <div style={styles.container}>
-      <h1 style={styles.title}>My Todo List</h1>
-      <TodoForm addTodo={addTodo} />
-      {/* Teruskan function toggleCompleted ke component Todos */}
-      <Todos 
-        todos={todos} 
-        toggleCompleted={toggleCompleted} 
-        deleteTodo={deleteTodo} />
-    </div>
+    // Bungkus app dengan provider dari context
+    <TodoContext.Provider value={{ toggleCompleted, deleteTodo }}>
+      <div style={styles.container}>
+        <h1 style={styles.title}>My Todo List</h1>
+        <TodoForm addTodo={addTodo} />
+        <Todos todos={todos} />
+      </div>
+    </TodoContext.Provider>
   )
 }
 
