@@ -1,4 +1,5 @@
-import React from 'react'
+import React, { useState } from 'react';
+import '../App.css';
 import TodoItem from './TodoItem'
 
 // Menerima function toggleCompleted sebagai sebuah prop
