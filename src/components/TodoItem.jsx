@@ -1,4 +1,5 @@
-import React from 'react'
+import React, { useState } from 'react';
+import '../App.css';
 // Definisikan function toggleCompleted di sini
 const toggleCompleted = () => {
     console.log('toggleCompleted function is called')
