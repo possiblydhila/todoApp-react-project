@@ -23,7 +23,7 @@ const Todos = ({ todos, toggleCompleted, deleteTodo }) => {
   
   const styles = {
     container: {
-      width: '40%',
+      width: '100%',
       margin: '0 auto',
     //   padding: '0px 100px 0px 100px'
     },

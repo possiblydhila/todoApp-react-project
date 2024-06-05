@@ -33,14 +33,15 @@ const TodoItem = ({ todo, toggleCompleted, deleteTodo }) => {
           <p style={getTodoTitleStyle()}>{todo.title}</p>
           <button 
             style={styles.button} 
-            onClick={() => deleteTodo(todo.id)}>x</button>
+            onClick={() => deleteTodo(todo.id)}>X</button>
         </div>
       )
   }
   
   const styles = {
     todoItem: {
-      border: '2px solid #f4f4f4',
+      borderTop: '1px solid #f4f4f4',
+      borderBottom: '1px solid #f4f4f4',
       fontSize: '24px',
       display: 'flex',
       justifyContent: 'space-between',
@@ -50,6 +51,7 @@ const TodoItem = ({ todo, toggleCompleted, deleteTodo }) => {
     checkbox: {
       height: '18px',
       width: '18px',
+      marginRight: '20px'
     },
     button: {
       backgroundColor: '#BB0000',
@@ -60,7 +62,13 @@ const TodoItem = ({ todo, toggleCompleted, deleteTodo }) => {
       border: 'none',
       cursor: 'pointer',
       fontSize: '16px',
-    },
+
+      display: 'flex',
+      justifyContent: 'center',
+      alignItems: 'center',
+      textAlign: 'center',
+      marginLeft: '20px'
+  },
   }
 
 export default TodoItem

@@ -51,7 +51,7 @@ const styles = {
   },
   formInput: {
     height: '66px',
-    width: '40%',
+    width: '68%',
     fontSize: '16px',
     padding: '0 16px',
   },
