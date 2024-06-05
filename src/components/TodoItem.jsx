@@ -1,15 +1,20 @@
-import React, { useState } from 'react';
-import '../App.css';
-// Definisikan function toggleCompleted di sini
-const toggleCompleted = () => {
-    console.log('toggleCompleted function is called')
-  }
+// Lakukan import hook "useContext" dari React dan "TodoContext" dari App.jsx
+import React, { useContext } from 'react'
+import { TodoContext } from '../App'
 
-  const deleteTodo = () => {
-    console.log('deleteTodo function is called')
-  }
+// Definisikan function toggleCompleted di sini
+// const toggleCompleted = () => {
+//     console.log('toggleCompleted function is called')
+//   }
+
+//   const deleteTodo = () => {
+//     console.log('deleteTodo function is called')
+//   }
+
 // Menerima function toggleCompleted sebagai sebuah prop
-const TodoItem = ({ todo, toggleCompleted, deleteTodo }) => {
+const TodoItem = ({ todo }) => {
+    const { toggleCompleted, deleteTodo } = useContext(TodoContext)
+
     const getTodoTitleStyle = () => {
       if (todo.completed === true) {
         return { textDecoration: 'line-through' }
